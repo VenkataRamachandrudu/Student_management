@@ -1,0 +1,46 @@
+{% extends "layout.html" %}
+{% block content %}
+
+<h2>Students</h2>
+
+<form>
+    <input name="search" placeholder="Search by name" value="{{ search }}">
+</form>
+
+<a href="/add" class="btn btn-add">+ Add Student</a>
+
+<div class="card">
+
+<table>
+    <tr>
+        <th>ID</th>
+        <th>REG NO</th>
+        <th>NAME</th>
+        <th>BRANCH</th>
+        <th>YEAR</th>
+        <th>CGPA</th>
+        <th>ACTIONS</th>
+    </tr>
+
+    {% for s in students %}
+    <tr>
+        <td>{{ s[0] }}</td>
+        <td>{{ s[1] }}</td>
+        <td>{{ s[2] }}</td>
+        <td>{{ s[3] }}</td>
+        <td>{{ s[4] }}</td>
+        <td>{{ s[5] }}</td>
+
+        <td>
+            <div class="action-buttons">
+                <a href="/edit/{{ s[0] }}" class="btn btn-edit">Edit</a>
+                <a href="/delete/{{ s[0] }}" class="btn btn-delete">Delete</a>
+            </div>
+        </td>
+    </tr>
+    {% endfor %}
+</table>
+
+</div>
+
+{% endblock %}

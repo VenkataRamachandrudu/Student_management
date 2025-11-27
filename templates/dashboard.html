@@ -1,0 +1,67 @@
+{% extends "layout.html" %}
+{% block content %}
+
+<h2>Dashboard</h2>
+
+<!-- DASHBOARD CARDS -->
+<div class="dash-grid">
+
+    <div class="dash-card">
+        <h3>Total Students</h3>
+        <p class="dash-number">{{ students_count }}</p>
+    </div>
+
+    <div class="dash-card">
+        <h3>Average CGPA</h3>
+        <p class="dash-number">{{ avg_cgpa }}</p>
+    </div>
+
+    <div class="dash-card">
+        <h3>Highest CGPA</h3>
+        <p class="dash-number">{{ max_cgpa }}</p>
+    </div>
+
+    <div class="dash-card">
+        <h3>Lowest CGPA</h3>
+        <p class="dash-number">{{ min_cgpa }}</p>
+    </div>
+
+</div>
+
+<!-- CHART CARD -->
+<div class="card chart-box">
+    <h3 class="chart-title">CGPA Comparison Chart</h3>
+    <canvas id="chart"></canvas>
+</div>
+
+<script>
+const labels = {{ names | tojson | safe }};
+const dataValues = {{ cgpa | tojson | safe }};
+
+new Chart(document.getElementById("chart"), {
+    type: "bar",
+    data: {
+        labels: labels,
+        datasets: [{
+            label: "CGPA",
+            data: dataValues,
+            backgroundColor: "#6a11cb80",
+            borderColor: "#6a11cb",
+            borderWidth: 2
+        }]
+    },
+    options: {
+        plugins: {
+            legend: {
+                labels: { color: "#333", font: { size: 14 } }
+            }
+        },
+        scales: {
+            y: { ticks: { color: "#333" } },
+            x: { ticks: { color: "#333" } }
+        }
+    }
+});
+</script>
+
+{% endblock %}

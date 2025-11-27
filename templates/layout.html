@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Student Management System</title>
+    <link rel="stylesheet" href="/static/style.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+
+<body>
+
+<div class="navbar">
+    <a href="/dashboard">Dashboard</a>
+    <a href="/students">Students</a>
+
+    <div class="navbar-right">
+        <a href="/logout">Logout</a>
+    </div>
+</div>
+
+<div style="padding: 25px;">
+    {% block content %}{% endblock %}
+</div>
+
+</body>
+</html>

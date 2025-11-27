@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Login</title>
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+
+<body>
+
+<div class="card" style="width:350px; margin:100px auto;">
+    <h2>Admin Login</h2>
+
+    <form method="POST">
+
+        <input name="username" placeholder="Username">
+        <input type="password" name="password" placeholder="Password">
+
+        {% if error %}
+        <p style="color:red;">{{ error }}</p>
+        {% endif %}
+
+        <button class="btn" style="width:100%;">Login</button>
+    </form>
+</div>
+
+</body>
+</html>

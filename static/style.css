@@ -1,0 +1,240 @@
+/* ===================================
+   GLOBAL STYLE
+=================================== */
+body {
+    margin: 0;
+    font-family: "Inter", "Segoe UI", Arial, sans-serif;
+    background: #f0f2f5;
+    color: #333;
+}
+
+/* ===================================
+   MODERN GRADIENT NAVBAR
+=================================== */
+.navbar {
+    background: linear-gradient(90deg, #6a11cb, #2575fc);
+    padding: 16px 28px;
+    display: flex;
+    align-items: center;
+    color: white;
+    box-shadow: 0 4px 14px rgba(0,0,0,0.25);
+}
+
+.navbar a {
+    color: white;
+    margin-right: 30px;
+    text-decoration: none;
+    font-size: 17px;
+    font-weight: 600;
+    transition: 0.25s;
+}
+
+.navbar a:hover {
+    opacity: 0.8;
+}
+
+.navbar-right {
+    margin-left: auto;
+}
+
+/* ===================================
+   CLEAN CARD
+=================================== */
+.card {
+    background: white;
+    padding: 28px;
+    border-radius: 14px;
+    margin-top: 25px;
+    box-shadow: 0 6px 18px rgba(0,0,0,0.12);
+    animation: fadeIn 0.45s ease;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(12px); }
+    to   { opacity: 1; transform: translateY(0); }
+}
+
+/* ===================================
+   PERFECT TABLE ALIGNMENT
+=================================== */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 15px;
+    table-layout: fixed; /* Equal column widths */
+}
+
+table th {
+    background: #1e1e1e;
+    color: white;
+    padding: 14px;
+    font-size: 15px;
+    text-align: center;
+    letter-spacing: 0.5px;
+}
+
+table td {
+    padding: 14px;
+    text-align: center;
+    border-bottom: 1px solid #ddd;
+    vertical-align: middle; 
+    background: #f7f9ff;
+}
+
+/* Prevent hover stretch */
+table tr:hover td {
+    background: #eef3ff;
+}
+
+/* Make action buttons column wide */
+table th:nth-child(7),
+table td:nth-child(7) {
+    width: 200px;
+}
+
+/* ===================================
+   BUTTONS WITH BLACK TEXT
+=================================== */
+.btn {
+    padding: 10px 16px;
+    border-radius: 8px;
+    font-weight: 600;
+    font-size: 14px;
+    display: inline-block;
+    transition: 0.25s ease;
+    cursor: pointer;
+    color: #000 !important; /* Black text */
+}
+
+/* Edit button */
+.btn-edit {
+    background: #7ab8ff;
+}
+.btn-edit:hover {
+    background: #5fa7ff;
+    transform: translateY(-2px);
+}
+
+/* Delete button */
+.btn-delete {
+    background: #ff8a8a;
+}
+.btn-delete:hover {
+    background: #ff6b6b;
+    transform: translateY(-2px);
+}
+
+/* Add Student button */
+.btn-add {
+    background: #8cff9c;
+    margin-bottom: 15px;
+}
+.btn-add:hover {
+    background: #6fe881;
+    transform: translateY(-2px);
+}
+
+/* ===================================
+   BUTTON ALIGN FIX
+=================================== */
+.action-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 12px;
+}
+
+/* ===================================
+   FORM INPUTS
+=================================== */
+input {
+    width: 100%;
+    padding: 14px;
+    border-radius: 8px;
+    border: 1px solid #c6c6c6;
+    font-size: 16px;
+    margin-bottom: 16px;
+}
+
+input:focus {
+    outline: none;
+    border-color: #6a11cb;
+    box-shadow: 0 0 6px rgba(106,17,203,0.4);
+}
+
+/* ===================================
+   HEADINGS
+=================================== */
+h2 {
+    margin-bottom: 10px;
+    font-size: 26px;
+    font-weight: 700;
+    color: #1e1e1e;
+}
+
+
+/* ===============================
+   DASHBOARD GRID
+================================ */
+.dash-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 22px;
+    margin-top: 10px;
+}
+
+/* DASHBOARD CARDS */
+.dash-card {
+    background: white;
+    padding: 22px;
+    border-radius: 14px;
+    text-align: center;
+    box-shadow: 0 5px 16px rgba(0,0,0,0.12);
+    animation: fadeIn 0.6s ease;
+    border-left: 6px solid #6a11cb;
+    transition: 0.3s ease;
+}
+
+.dash-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 10px 25px rgba(0,0,0,0.20);
+}
+
+.dash-card h3 {
+    font-size: 18px;
+    margin-bottom: 8px;
+    color: #444;
+}
+
+.dash-number {
+    font-size: 32px;
+    font-weight: bold;
+    color: #6a11cb;
+}
+
+/* ===============================
+   CHART CARD
+================================ */
+.chart-box {
+    margin-top: 25px;
+    border-radius: 16px;
+    padding: 30px;
+}
+
+.chart-title {
+    margin-bottom: 15px;
+    color: #333;
+    font-size: 20px;
+    font-weight: 600;
+}
+
+/* Responsive */
+@media (max-width: 900px) {
+    .dash-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+@media (max-width: 600px) {
+    .dash-grid {
+        grid-template-columns: 1fr;
+    }
+}

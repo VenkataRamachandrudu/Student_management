@@ -1,0 +1,20 @@
+{% extends "layout.html" %}
+{% block content %}
+
+<h2>Add Student</h2>
+
+<div class="card">
+<form method="POST">
+
+    <input name="regno" placeholder="Register No" required>
+    <input name="name" placeholder="Name" required>
+    <input name="branch" placeholder="Branch" required>
+    <input name="year" placeholder="Year" required>
+    <input name="cgpa" placeholder="CGPA" required>
+
+    <button class="btn btn-add">Add Student</button>
+
+</form>
+</div>
+
+{% endblock %}
